@@ -202,3 +202,9 @@ Use `made-with-light.svg` on a light page.
   explained them in public.
 
 MIT licensed. Brand type: Geist Pixel, Sometype Mono and Instrument Sans. Video titles: Space Grotesk and JetBrains Mono. All under the SIL OFL.
+
+## Star history
+
+<p align="center">
+  <a href="https://github.com/rehan-remade/universal-modder/stargazers"><img src="https://raw.githubusercontent.com/rehan-remade/universal-modder/star-chart/stars.svg" width="800" alt="universal-modder's GitHub stars over time"></a>
+</p>

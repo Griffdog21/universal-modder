@@ -895,7 +895,8 @@
    "fabric",
    "mixin",
    "advancements",
-   "installer"
+   "installer",
+   "minecraft-launcher"
   ]
  },
  {

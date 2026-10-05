@@ -845,6 +845,54 @@
   ]
  },
  {
+  "path": "games/portal-2/portalcraft-minecraft-inside-portal-2.md",
+  "kind": "game",
+  "title": "Portalcraft: real Minecraft inside Portal 2 (passthrough mod)",
+  "game": "Portal 2",
+  "games_also": [
+   "Minecraft Java Edition"
+  ],
+  "game_version": "Portal 2 (Steam, build 10090, D3D9, 32-bit) + ReShade 6.8.0 add-on build; Minecraft Java 26.3 + Fabric Loader 0.19.5 + Fabric API 0.161.0+26.3, JDK 25 (Temurin 25.0.4.1+1), Windows 11",
+  "platform": "windows",
+  "engine": "source",
+  "route": "passthrough",
+  "tools": [
+   "ReShade 6.8 add-on API (32-bit add-on)",
+   "Fabric Loader + Fabric API (Loom 1.18, JDK 25)",
+   "MSVC x86 (portable)",
+   "hl2sdk-portal2 headers",
+   "SourceAutoRecord offset tables",
+   "um win (WinDrive) for test input"
+  ],
+  "anti_cheat": "VAC on online co-op only: Portal 2 is launched with -insecure (VAC off) and ReShade's d3d9.dll is placed in the game folder only for the session, then removed",
+  "status": "working",
+  "agents": [
+   "Claude Code (Opus 5.5)"
+  ],
+  "humans": [
+   "@griffdog21"
+  ],
+  "date": "2026-10-05",
+  "links": [
+   "games/gta-v/minecraft-passthrough.md"
+  ],
+  "tags": [
+   "mashup",
+   "passthrough",
+   "shared-memory",
+   "depth-compositing",
+   "reprojection",
+   "camera-prediction",
+   "reshade-addon",
+   "vscript",
+   "netvars",
+   "fabric",
+   "mixin",
+   "advancements",
+   "installer"
+  ]
+ },
+ {
   "path": "games/project-zomboid/b41-modpack-fix-mods-and-linux-dedicated-server.md",
   "kind": "game",
   "title": "A Build 41 Project Russia modpack: three small fix mods and a modded Linux dedicated server",

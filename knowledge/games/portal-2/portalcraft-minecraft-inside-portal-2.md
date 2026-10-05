@@ -115,9 +115,13 @@ Minecraft blocks, health, velocity.
   it was). Logged: entities carried through portals, landings (height, speed, damage), damage reaching Portal 2
   (`fall took 30.0 health`), heals, achievements, goo kills. Frame rate read from `cl_showfps` crops.
 - **The human played** the campaign between iterations and reported what felt wrong (stutter, keys, cut-off outlines).
+- **The release itself:** the installer's quiet mode installed the shipped zip into a separate folder (every download
+  hash-checked), then a script ran that copy's own launcher: production Minecraft (`KnotClient`) and Portal 2 started,
+  a campaign level showed Minecraft composited (add-on screenshot), and after Portal 2 was closed the launcher quit
+  Minecraft and no ReShade file was left in Portal 2's folder. That run caught Gotcha 17.
 - **Not verified:** the latest outline fix (near-to-far ray walk + overscan) only in a 2560x1440 simulation and quick
   strafes, not a long session; Portal 2 physics props colliding with Minecraft blocks (they don't); the installer on a
-  second PC (it was run end-to-end on the dev PC into a separate folder).
+  second PC (only on the dev PC, into a separate folder).
 
 ## Gotchas
 1. **ReShade never loads.** **Cause:** `d3d9.dll` next to `portal2.exe`. **Fix:** `bin\d3d9.dll`.
@@ -160,6 +164,12 @@ Minecraft blocks, health, velocity.
 16. **Test runs left traces in the player's world** (a floor block turned to slime, achievements, XP, a supply drop).
     **Fix:** every test hook that changes the world has an undo (`!slime off`, `!achrestore` with XP, game mode and
     difficulty restore), and campaign-level Survival tests trigger real rewards: undo them.
+17. **The installed copy wouldn't start:** `Could not find or load main class
+    net.fabricmc.loader.impl.launch.knot.KnotClient`. **Cause:** Fabric's meta profile
+    (`/v2/versions/loader/<mc>/<loader>/profile/json`) gives `sha1` and `size` for every library except
+    `net.fabricmc:fabric-loader` itself (checked 2026-10-05: loader 0.19.5 for 26.3), and the installer read "no hash"
+    as "nothing to fetch". **Fix:** when an entry has no hash, download `<artifact url>.sha1` from maven.fabricmc.net
+    and verify against that. Test launching an installed copy, not just installing it.
 
 ## Assets
 No Minecraft or Portal 2 asset is shipped. The logo (Minecraft font, white concrete + stone textures, a drawn portal),
